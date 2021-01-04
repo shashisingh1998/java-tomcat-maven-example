@@ -11,7 +11,7 @@ pipeline {
  
 			steps {
  
-				git branch: 'develop',
+				git branch: 'develops',
  
 				credentialsId: '7d947666-86fa-4882-bc71-e16f8b10afbf',
  
@@ -60,23 +60,12 @@ pipeline {
 			}
  
 		}
-
-		 stage ('Deploy War File') {
-
-                        steps {
-
-                                sh "sudo -i"
-
-                        }
-
-                }
-
  
 		stage ('Deploy War File') {
  
 			steps {
  
-				sh "cp target/*.war apache-tomcat-9.0.41/webapps/"
+				sh "cp target/*.war /etc/apache-tomcat-9.0.41/webapps/"
  
 			}
  
